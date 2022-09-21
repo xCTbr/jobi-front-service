@@ -18,6 +18,11 @@
   border-radius: 0;
 }
 
+.card a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .card-green,
 .card-purple,
 .card-blue {

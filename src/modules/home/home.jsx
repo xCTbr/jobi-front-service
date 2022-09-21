@@ -11,6 +11,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 import "./home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -26,7 +27,10 @@ function Home() {
                 <Card.Text>
                   Mergulhe com profundidade nas área de Tecnologia
                 </Card.Text>
-                <Button variant="primary">Explorar</Button>
+
+                <Button variant="primary">
+                  <Link to="/cursos">Explorar</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -40,7 +44,9 @@ function Home() {
                 <Card.Text>
                   Acompanhe sua jornada na busca de uma nova colocação
                 </Card.Text>
-                <Button variant="primary">Explorar</Button>
+                <Button variant="primary">
+                  <Link to="/vagas">Explorar</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -54,7 +60,9 @@ function Home() {
                 <Card.Text>
                   Prove sua proficiência em diversas tecnologias
                 </Card.Text>
-                <Button variant="primary">Explorar</Button>
+                <Button variant="primary">
+                  <Link to="/challenges">Explorar</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>

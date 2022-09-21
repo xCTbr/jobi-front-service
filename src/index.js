@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./core/header/header";
 import Home from "./modules/home/home";
 import Cursos from "./modules/cursos/cursos";
+import DetalheCurso from "./modules/detalhe-curso/detalhe-curso";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/cursos",
     element: <Cursos />,
+  },
+  {
+    path: "/cursos/:id",
+    element: <DetalheCurso />,
   },
   {
     path: "/*",
