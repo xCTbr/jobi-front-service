@@ -1,0 +1,68 @@
+.teste-sobre h3 {
+  padding: 10px 0;
+}
+
+.teste-sobre-titulo {
+  margin: 40px 0;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #2d9bf0;
+  background-color: #fff;
+}
+
+.teste-sobre-titulo h4 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2d9bf0;
+  margin-right: 30px;
+}
+
+.teste-sobre-titulo span {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.teste-sobre-descricao {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 100px;
+  border: 2px solid #2d9bf0;
+  background-color: #fff;
+}
+
+.teste-sobre-descricao-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d9bf0;
+}
+
+.teste-sobre-descricao-info {
+  margin-bottom: 30px;
+}
+
+.teste-sobre-descricao button {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 80%;
+  background-color: #2d9bf0;
+  border-color: #2d9bf0;
+}
+
+.teste-sobre-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.teste-sobre-icons span {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(139, 139, 139);
+}
+
+.teste-sobre-icons img {
+  width: 24px;
+  margin-right: 10px;
+}

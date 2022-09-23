@@ -11,6 +11,9 @@ import Header from "./core/header/header";
 import Home from "./modules/home/home";
 import Cursos from "./modules/cursos/cursos";
 import DetalheCurso from "./modules/detalhe-curso/detalhe-curso";
+import Challenges from "./modules/challenges/challenges";
+import Trilha from "./modules/trilha/trilha";
+import TesteSobre from "./modules/testes-sobre/teste-sobre";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
   {
     path: "/cursos/:id",
     element: <DetalheCurso />,
+  },
+  {
+    path: "/challenges",
+    element: <Challenges />,
+  },
+  {
+    path: "/trilha",
+    element: <Trilha />,
+  },
+  {
+    path: "/trilha/sobre",
+    element: <TesteSobre />,
   },
   {
     path: "/*",

@@ -8,11 +8,14 @@
 
 .cursos-container {
   background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px 0;
 }
 
 .cursos-cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cursos-cards .card {

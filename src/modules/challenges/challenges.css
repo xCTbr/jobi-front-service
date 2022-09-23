@@ -1,0 +1,53 @@
+.challenges h2 {
+  color: #fff;
+  font-size: 48px;
+  padding-top: 20px;
+}
+
+.challenges hr {
+  width: 7%;
+  border: 2px solid #fff;
+  color: #fff;
+  opacity: 1;
+}
+
+.challenges .sub-title {
+  color: #fff;
+  font-size: 18px;
+}
+
+.challenges .card {
+  padding: 0;
+  border: 2px solid #2d9bf0;
+  margin: 15px;
+  width: 22%;
+}
+
+.challenges .card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.challenges .card p {
+  text-align: center;
+  opacity: 0.7;
+}
+
+.challenges .card-body button {
+  margin-top: 20px;
+}
+
+.challenges .card-banner {
+  margin: 0 !important;
+}
+
+.challenges .card-etapas {
+  display: flex;
+  align-items: center;
+}
+
+.challenges .card-etapas img {
+  width: 24px;
+  margin: 0 !important;
+  margin-right: 10px !important;
+}

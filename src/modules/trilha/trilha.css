@@ -1,0 +1,37 @@
+.trilha h3 {
+  padding: 10px 0;
+}
+
+.trilha-lista {
+  list-style: none;
+  margin: 40px 0;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #cccc;
+}
+
+.trilha-lista button {
+  width: 220px;
+  background-color: #2d9bf0;
+  border-color: #2d9bf0;
+}
+
+.trilha-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.trilha-lista_info-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.trilha-lista_info-level {
+  margin-right: 10px;
+  color: #0ca789;
+  font-weight: 500;
+}
