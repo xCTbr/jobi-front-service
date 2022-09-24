@@ -1,0 +1,129 @@
+.processo-seletivo .container {
+}
+
+.processo-seletivo .nav-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.processo-seletivo .nav-tabs li {
+  width: 49.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.processo-seletivo .nav-tabs li button {
+  width: 100%;
+  color: #fff !important;
+  font-size: 18px;
+  border-radius: 0;
+  height: 48px;
+}
+
+.processo-seletivo .nav-tabs li button.active {
+  height: 58px !important;
+}
+
+.processo-seletivo .nav-tabs li:first-of-type button {
+  background-color: #0ca789;
+  border-color: #0ca789;
+  height: 48px;
+}
+
+.processo-seletivo .nav-tabs li:last-of-type button {
+  background-color: #2d9bf0;
+  border-color: #2d9bf0;
+}
+
+.processo-seletivo .tab-content {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.processo-seletivo-titulo {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.processo-seletivo-titulo h3 {
+  font-size: 28px;
+}
+
+.processo-seletivo-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.processo-seletivo-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.processo-seletivo-lista li:last-of-type {
+  border-bottom: none;
+}
+
+.processo-seletivo-lista li p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.processo-seletivo-lista li span {
+  margin-right: 10px;
+  opacity: 0.8;
+}
+
+.processo-seletivo-lista li button {
+  background-color: #0ca789;
+  border-color: #0ca789;
+  padding: 10px 40px;
+}
+
+.processo-seletivo-lista li button:hover {
+  background-color: #0a6855 !important;
+  border-color: #0a6855 !important;
+}
+
+.seus-processos-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.seus-processos-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.seus-processos-lista li:last-of-type {
+  border-bottom: none;
+}
+
+.seus-processos-lista li p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.seus-processos-lista li span {
+  margin-right: 10px;
+  opacity: 0.8;
+  color: #2d9bf0;
+}
+
+.seus-processos-lista li button {
+  background-color: #2d9bf0;
+  border-color: #2d9bf0;
+  padding: 10px 40px;
+}
+
+.seus-processos-lista li button:hover {
+  background-color: #20659b !important;
+  border-color: #20659b !important;
+}

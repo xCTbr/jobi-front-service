@@ -1,6 +1,7 @@
 import "./header.css";
 import { FaUserAlt } from "react-icons/fa";
 import { BsFillChatLeftTextFill, BsFillGearFill } from "react-icons/bs";
+import { Link, Router } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
 
         <ul>
           <li>
-            <a>Knowledge</a>
+            <a>Explorar</a>
           </li>
           <li>
             <a>Jobs</a>
