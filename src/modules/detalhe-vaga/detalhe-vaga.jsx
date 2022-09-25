@@ -48,7 +48,7 @@ function DetalheVaga() {
 
           <div className="card">
             <div className="detalhe-vaga-titulo">
-              <img src={logoProcesso} />
+              <img src={logoProcesso} alt="" />
 
               <div>
                 <p>{vaga.titulo}</p>
@@ -63,7 +63,7 @@ function DetalheVaga() {
             </div>
 
             <p className="detalhe-vaga-modelo">
-              <img src={maletaDeNegocios} />
+              <img src={maletaDeNegocios} alt="" />
               {vaga.periodo_atividade} - {vaga.senioridade}
             </p>
 

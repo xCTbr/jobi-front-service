@@ -1,5 +1,3 @@
-import { useParams } from "react-router-dom";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -17,7 +15,6 @@ import perfilAvaliacao from "../../assets/img/perfil-avaliacao.png";
 import Button from "react-bootstrap/Button";
 
 function DetalheCurso() {
-  const { id } = useParams();
   const curso = {
     categoria: "TI e Software",
     titulo: "Python Web Scraping",
@@ -82,7 +79,7 @@ function DetalheCurso() {
               <div className="card">
                 <Row>
                   <Col xs={6}>
-                    <img src={curso.capa} />
+                    <img src={curso.capa} alt="" />
                   </Col>
                   <Col xs={6}>
                     <h4>Aulas</h4>
@@ -109,7 +106,7 @@ function DetalheCurso() {
                           <li>
                             <div>
                               <div className="d-flex align-items-start">
-                                <img src={perfilAvaliacao} />
+                                <img src={perfilAvaliacao} alt="" />
 
                                 <div className="avaliacao-nome-data">
                                   <p>{avaliacao.nome}</p>
@@ -120,7 +117,7 @@ function DetalheCurso() {
                               <p>{avaliacao.texto}</p>
 
                               <b>
-                                <img className="estrela" src={estrela} />
+                                <img className="estrela" src={estrela} alt="" />
                                 {avaliacao.avaliacao}
                               </b>
                             </div>
@@ -136,7 +133,7 @@ function DetalheCurso() {
                     <div className="avaliacao-instrutor">
                       <div className="d-flex align-items-start flex-column">
                         <div className="d-flex align-items-center">
-                          <img className="m-0" src={perfilAvaliacao} />
+                          <img className="m-0" src={perfilAvaliacao} alt="" />
                           <p className="m-0 mx-2">{curso.instrutor.nome}</p>
                         </div>
 
@@ -156,23 +153,23 @@ function DetalheCurso() {
               <div className="card card-dados-curso">
                 <ul className="dados-curso">
                   <li>
-                    <img src={cronometro} />
+                    <img src={cronometro} alt="" />
                     {curso.duracao}
                   </li>
                   <li>
-                    <img src={cadernoDeRascunhos} />
+                    <img src={cadernoDeRascunhos} alt="" />
                     {curso.qtd_atividades} atividades
                   </li>
                   <li>
-                    <img src={trofeu} />
+                    <img src={trofeu} alt="" />
                     Certificado de conclusão
                   </li>
                   <li>
-                    <img src={grupoDeUsuarios} />
+                    <img src={grupoDeUsuarios} alt="" />
                     {curso.qtd_alunos} aderiram esse curso
                   </li>
                   <li>
-                    <img src={estrela} />
+                    <img src={estrela} alt="" />
                     {curso.avaliacao}
                   </li>
                 </ul>

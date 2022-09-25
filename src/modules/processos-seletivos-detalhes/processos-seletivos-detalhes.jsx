@@ -33,7 +33,7 @@ function ProcessosSeletivosDetalhes() {
           <br></br>
 
           <div className="detalhe-processo_titulo">
-            <img src={logoProcesso} />
+            <img src={logoProcesso} alt="" />
             <div>
               <h4>Analista de suporte</h4>
               <p>Candidatou-se há 9 dias</p>
@@ -47,21 +47,21 @@ function ProcessosSeletivosDetalhes() {
               <hr />
 
               <div className="detalhe-processo_historico-fluxo_item">
-                <img src={checkbox} />
+                <img src={checkbox} alt="" />
                 Currículo
               </div>
 
               <hr />
 
               <div className="detalhe-processo_historico-fluxo_item">
-                <img src={clock} />
+                <img src={clock} alt="" />
                 Teste de perfil
               </div>
 
               <hr />
 
               <div className="detalhe-processo_historico-fluxo_item">
-                <img src={clock} />
+                <img src={clock} alt="" />
                 Teste de lógica
               </div>
 

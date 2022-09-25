@@ -69,6 +69,10 @@
   border-radius: 0;
 }
 
+.cursos .card-body button a {
+  width: 100%;
+}
+
 .cursos .card-body button:hover {
   background-color: #0c6453;
   border-color: #0c6453;

@@ -58,17 +58,17 @@ function TesteSobre() {
 
             <div className="teste-sobre-icons">
               <span>
-                <img src={cronometro} />
+                <img src={cronometro} alt="" />
                 {teste.challenge.duracao}
               </span>
 
               <span>
-                <img src={estrela} />
+                <img src={estrela} alt="" />
                 {teste.challenge.avaliacao}
               </span>
 
               <span>
-                <img src={share} />
+                <img src={share} alt="" />
                 Share
               </span>
             </div>

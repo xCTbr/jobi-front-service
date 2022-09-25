@@ -49,12 +49,12 @@
 
 .chat-right-balloon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .chat-left-balloon {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .chat-right-balloon p,

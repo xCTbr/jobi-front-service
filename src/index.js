@@ -5,7 +5,12 @@ import React from "react";
 import reportWebVitals from "./reportWebVitals";
 
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import Header from "./core/header/header";
 import Home from "./modules/home/home";
@@ -19,57 +24,37 @@ import ProcessosSeletivosDetalhes from "./modules/processos-seletivos-detalhes/p
 import DetalheVaga from "./modules/detalhe-vaga/detalhe-vaga";
 import Mensagens from "./modules/mensagens/mensagens";
 
-const router = createBrowserRouter([
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/cursos",
-    element: <Cursos />,
-  },
-  {
-    path: "/cursos/:id",
-    element: <DetalheCurso />,
-  },
-  {
-    path: "/challenges",
-    element: <Challenges />,
-  },
-  {
-    path: "/trilha",
-    element: <Trilha />,
-  },
-  {
-    path: "/trilha/sobre",
-    element: <TesteSobre />,
-  },
-  {
-    path: "processos-seletivos",
-    element: <ProcessosSeletivos />,
-  },
-  {
-    path: "processos-seletivos/detalhes",
-    element: <ProcessosSeletivosDetalhes />,
-  },
-  {
-    path: "vagas/detalhes",
-    element: <DetalheVaga />,
-  },
-  {
-    path: "mensagens",
-    element: <Mensagens />,
-  },
-  {
-    path: "/*",
-    element: <Home />,
-  },
-]);
-
 createRoot(document.getElementById("root")).render(
   <>
-    <Header />
-    <RouterProvider router={router} fallbackElement={<Home />}></RouterProvider>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+
+        <Route path="/cursos" element={<Cursos />} />
+
+        <Route path="/cursos/:id" element={<DetalheCurso />} />
+
+        <Route path="/challenges" element={<Challenges />} />
+
+        <Route path="/trilha" element={<Trilha />} />
+
+        <Route path="/trilha/sobre" element={<TesteSobre />} />
+
+        <Route path="/processos-seletivos" element={<ProcessosSeletivos />} />
+
+        <Route
+          path="/processos-seletivos/detalhes"
+          element={<ProcessosSeletivosDetalhes />}
+        />
+
+        <Route path="/vagas/detalhes" element={<DetalheVaga />} />
+
+        <Route path="/mensagens" element={<Mensagens />} />
+
+        <Route path="/" element={<Navigate to="home" />} />
+      </Routes>
+    </Router>
   </>
 );
 

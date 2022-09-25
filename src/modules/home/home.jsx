@@ -45,7 +45,7 @@ function Home() {
                   Acompanhe sua jornada na busca de uma nova colocação
                 </Card.Text>
                 <Button variant="primary">
-                  <Link to="/vagas">Explorar</Link>
+                  <Link to="/processos-seletivos">Explorar</Link>
                 </Button>
               </Card.Body>
             </Card>

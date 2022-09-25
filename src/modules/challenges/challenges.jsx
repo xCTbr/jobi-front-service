@@ -3,6 +3,8 @@ import ladder from "../../assets/img/ladder.png";
 import challengesImg from "../../assets/img/challenges.png";
 import "./challenges.css";
 
+import { Link } from "react-router-dom";
+
 function Challenges() {
   const challenges = [
     {
@@ -63,7 +65,7 @@ function Challenges() {
             {challenges.map((challenge) => {
               return (
                 <div className="card">
-                  <img className="card-banner" src={challenge.banner} />
+                  <img className="card-banner" src={challenge.banner} alt="" />
 
                   <div className="card-body">
                     <h3>{challenge.titulo}</h3>
@@ -75,7 +77,9 @@ function Challenges() {
                       {challenge.qtd_etapas} Etapas
                     </b>
 
-                    <Button variant="primary">Acessar</Button>
+                    <Button variant="primary">
+                      <Link to="/trilha">Acessar</Link>
+                    </Button>
                   </div>
                 </div>
               );

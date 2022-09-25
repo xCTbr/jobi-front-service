@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 
 import "./processos-seletivos.css";
 
+import { Link } from "react-router-dom";
+
 function ProcessosSeletivos() {
   const vagasAbertas = [
     {
@@ -67,7 +69,9 @@ function ProcessosSeletivos() {
                         <span>{vaga.pais}</span>
                       </div>
 
-                      <Button variant="primary">Participar do Processo</Button>
+                      <Button variant="primary">
+                        <Link to="/vagas/detalhes">Participar do Processo</Link>
+                      </Button>
                     </li>
                   );
                 })}
@@ -86,10 +90,14 @@ function ProcessosSeletivos() {
 
                         <span>{processo.status}</span>
 
-                        <a>- veja as etapas do processo</a>
+                        <span>- veja as etapas do processo</span>
                       </div>
 
-                      <Button variant="primary">Participar do Processo</Button>
+                      <Button variant="primary">
+                        <Link to="/processos-seletivos/detalhes">
+                          Analisar o Processo
+                        </Link>
+                      </Button>
                     </li>
                   );
                 })}

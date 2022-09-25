@@ -16,6 +16,11 @@
   border-color: #2d9bf0;
 }
 
+.trilha-lista button a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .trilha-lista li {
   display: flex;
   justify-content: space-between;

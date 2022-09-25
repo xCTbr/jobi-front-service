@@ -30,8 +30,9 @@ header ul li svg {
   align-items: center;
 }
 
-.header--left-side h2 {
+.header--left-side h2 a {
   color: white;
+  font-size: 28px;
 }
 
 .header--left-side input {
@@ -58,4 +59,26 @@ header ul li svg {
 
 .header--left-side ul li {
   padding: 0;
+}
+
+.header--right-side li {
+  margin: 0;
+  padding: 0;
+}
+
+.header--right-side img {
+  width: 28px;
+}
+
+.header--right-side li a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+  color: #fff !important;
+  padding: 22px 15px;
+}
+
+.header--right-side li a:hover {
+  background-color: #3c3070;
 }

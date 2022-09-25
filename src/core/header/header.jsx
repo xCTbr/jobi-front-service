@@ -1,38 +1,49 @@
+import { Link } from "react-router-dom";
+
+import perfil from "../../assets/img/perfil-menu.png";
+import caixaDeDialogo from "../../assets/img/caixa-de-dialogo.png";
+import configuracao from "../../assets/img/configuracao.png";
+
 import "./header.css";
-import { FaUserAlt } from "react-icons/fa";
-import { BsFillChatLeftTextFill, BsFillGearFill } from "react-icons/bs";
-import { Link, Router } from "react-router-dom";
 
 function Header() {
   return (
     <header>
       <div className="header--left-side">
-        <h2>JOBI</h2>
+        <h2>
+          <Link to="/home">JOBI</Link>
+        </h2>
 
         <input type="search" id="searchBar" placeholder="Buscar vagas" />
 
         <ul>
           <li>
-            <a>Explorar</a>
+            <Link to="/cursos">Explorar</Link>
           </li>
           <li>
-            <a>Jobs</a>
+            <Link to="/processos-seletivos">Jobs</Link>
           </li>
           <li>
-            <a>Challenges</a>
+            <Link to="/challenges">Challenges</Link>
           </li>
         </ul>
       </div>
 
-      <ul>
+      <ul className="header--right-side">
         <li>
-          <FaUserAlt />
+          <Link>
+            <img src={perfil} alt="" />
+          </Link>
         </li>
         <li>
-          <BsFillChatLeftTextFill />
+          <Link to="/mensagens">
+            <img src={caixaDeDialogo} alt="" />
+          </Link>
         </li>
         <li>
-          <BsFillGearFill />
+          <Link>
+            <img src={configuracao} alt="" />
+          </Link>
         </li>
       </ul>
     </header>

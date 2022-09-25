@@ -61,7 +61,7 @@ function Mensagens() {
               {conversas.map((conversa, i) => {
                 return (
                   <li key={i}>
-                    <img src={conversa.pic}></img>
+                    <img src={conversa.pic} alt=""></img>
 
                     <div className="mensagens-lista-nome">
                       <p> {conversa.nome}</p>
@@ -94,14 +94,14 @@ function Mensagens() {
 
             <div className="chat-input">
               <div className="chat-input-left-side">
-                <img src={paperclip} />
-                <img src={feliz} />
-                <img src={imagem} />
+                <img src={paperclip} alt="" />
+                <img src={feliz} alt="" />
+                <img src={imagem} alt="" />
               </div>
 
               <div className="chat-input-right-side">
                 <input type="text" />
-                <img src={mandar} />
+                <img src={mandar} alt="" />
               </div>
             </div>
           </div>

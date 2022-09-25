@@ -1,6 +1,8 @@
 import { Container, Button } from "react-bootstrap";
 import "./trilha.css";
 
+import { Link } from "react-router-dom";
+
 function Trilha() {
   const challenges = [
     {
@@ -63,7 +65,9 @@ function Trilha() {
                     </span>
                   </div>
 
-                  <Button variant="primary">Acessar</Button>
+                  <Button variant="primary">
+                    <Link to="/trilha/sobre">Acessar</Link>
+                  </Button>
                 </li>
               );
             })}

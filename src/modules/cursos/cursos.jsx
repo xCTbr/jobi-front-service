@@ -10,6 +10,8 @@ import challenge from "../../assets/img/challenges.png";
 import { AiOutlineClockCircle, AiOutlineStar } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const axios = require("axios").default;
 
 function Cursos() {
@@ -68,7 +70,9 @@ function Cursos() {
                     </Card.Title>
 
                     <Card.Text>{course.descricao_curta}</Card.Text>
-                    <Button variant="primary">Acessar Curso</Button>
+                    <Button variant="primary">
+                      <Link to="/cursos/1">Acessar Curso</Link>
+                    </Button>
                   </Card.Body>
                 </Card>
               );
