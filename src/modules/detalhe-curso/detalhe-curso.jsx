@@ -13,8 +13,11 @@ import grupoDeUsuarios from "../../assets/img/grupo-de-usuarios.png";
 import perfilAvaliacao from "../../assets/img/perfil-avaliacao.png";
 
 import Button from "react-bootstrap/Button";
+import { useParams} from "react-router-dom";
 
 function DetalheCurso() {
+  const { id } = useParams();
+  console.log(id)
   const curso = {
     categoria: "TI e Software",
     titulo: "Python Web Scraping",

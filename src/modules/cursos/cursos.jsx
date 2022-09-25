@@ -20,14 +20,15 @@ function Cursos() {
   useEffect(() => {
     const getCourses = async () => {
       const res = await axios.get(
-        "https://632565a54cd1a2834c3d7693.mockapi.io/api/v1/cursos"
-      );
+       // "https://632565a54cd1a2834c3d7693.mockapi.io/api/v1/cursos"
+          "https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/cursos"
+       );
 
-      res.data.forEach((data) => {
+      res.data.resultado.forEach((data) => {
         data.banner = challenge;
       });
 
-      setCourses(res.data);
+      setCourses(res.data.resultado);
     };
     getCourses();
   }, []);
@@ -71,7 +72,7 @@ function Cursos() {
 
                     <Card.Text>{course.descricao_curta}</Card.Text>
                     <Button variant="primary">
-                      <Link to="/cursos/1">Acessar Curso</Link>
+                      <Link to={`/cursos/${course._id}`}>Acessar Curso</Link>
                     </Button>
                   </Card.Body>
                 </Card>
