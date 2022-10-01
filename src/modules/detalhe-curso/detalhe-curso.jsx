@@ -13,50 +13,44 @@ import grupoDeUsuarios from "../../assets/img/grupo-de-usuarios.png";
 import perfilAvaliacao from "../../assets/img/perfil-avaliacao.png";
 
 import Button from "react-bootstrap/Button";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+
+import { useEffect, useState } from "react";
+
+
+const axios = require("axios").default;
 
 function DetalheCurso() {
   const { id } = useParams();
-  console.log(id)
-  const curso = {
-    categoria: "TI e Software",
-    titulo: "Python Web Scraping",
-    descricao_longa:
-      "O curso de Python possui 60 aulas, neste curso o aluno aprenderá a linguagem Python. Nele é mostrado como desenvolver usando os comandos e a sintaxe Python atualizada seguindo a documentação estipulada pelos criadores da linguagem. Esta é uma das linguagens que mais crescem no mundo, pois com Python é possível desenvolver sistemas, jogos, aplicativos mobile e muito mais. Adquira já nosso curso e ingresse nessa nova linguagem. Torne-se um grande programador, acompanhe nossos cursos e comece já a desenvolver!!",
-    aulas: [
-      "Aula 13 - IF Composto - 5m 32s",
-      "Aula 14 - Trabalhando com Elif - 8m 32s",
-      "Aula 15 - Laços de Repetição - 12m 12s",
-      "Aula 16 - Laços de Repetição For - 8m 32s",
-      "Aula 17 - Comparadores End e Or - 12m 12s",
-      "Aula 18 - Variáveis do tipo float - 8m 32s",
-      "Aula 19 - Importando Módulos - 12m 12s",
-      "Aula 20 - Importando modulo randômico- 5m 32s",
-      "Aula 21 - Trabalhando com listas e Arrays- 5m 32s",
-      "Aula 22 - Arrays Múltiplos - 8m 32s",
-      "Aula 23 - Desenvolvendo com Listas - 8m 32s",
-    ],
-    relatos: [
-      {
-        nome: "Gabriel Santos",
-        data: "há um mês",
-        texto:
-          "Ótimo método de ensino. Rápido e objetivo, mas não deixa passar nada de importante. Parabéns aos desenvolvedores do curso.",
-        avaliacao: 10,
-      },
-    ],
-    instrutor: {
-      nome: "Nome",
-      descricao:
-        "Ajudo devs a conquistarem sua primeira vaga e construírem carreiras de sucesso!",
-    },
-    capa: challenges,
-    duracao: "92 minutos",
-    qtd_atividades: 12,
-    qtd_alunos: 120,
-    certificado: true,
-    avaliacao: 10,
-  };
+  const [curso, setCursos] = useState([]);
+
+  useEffect(() => {
+    const getCursos = async () => {
+      const res = await axios.get(
+        `https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/cursos/${id}`
+      );
+
+      res.data.resultado.relatos = [
+        {
+          nome: "Gabriel Santos",
+          data: "há um mês",
+          texto:
+            "Ótimo método de ensino. Rápido e objetivo, mas não deixa passar nada de importante. Parabéns aos desenvolvedores do curso.",
+          avaliacao: 10,
+        },
+      ]
+      res.data.resultado.instrutor = {
+        nome: "Nome",
+        descricao:
+          "Ajudo devs a conquistarem sua primeira vaga e construírem carreiras de sucesso!",
+      }
+
+      res.data.resultado.capa = challenges;
+      setCursos(res.data.resultado);
+    };
+    getCursos();
+  }, []);
 
   return (
     <>
@@ -87,9 +81,11 @@ function DetalheCurso() {
                   <Col xs={6}>
                     <h4>Aulas</h4>
                     <ul className="aulas">
-                      {curso.aulas.map((aula, i) => {
-                        return <li key={i}>{aula}</li>;
-                      })}
+                      {
+                        curso?.aulas?.length ?
+                          curso.aulas.map((aula, i) => {
+                            return <li key={i}>{aula}</li>;
+                          }) : null}
                     </ul>
                   </Col>
 
