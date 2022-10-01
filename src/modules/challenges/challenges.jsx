@@ -3,41 +3,29 @@ import ladder from "../../assets/img/ladder.png";
 import challengesImg from "../../assets/img/challenges.png";
 import "./challenges.css";
 
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
+const axios = require("axios").default;
+
 function Challenges() {
-  const challenges = [
-    {
-      banner: challengesImg,
-      titulo: "Capacitação Técnica",
-      descricao: "Mergulhe com profundidade nas área de Tecnologia",
-      qtd_etapas: 16,
-    },
-    {
-      banner: challengesImg,
-      titulo: "Capacitação Técnica",
-      descricao: "Mergulhe com profundidade nas área de Tecnologia",
-      qtd_etapas: 16,
-    },
-    {
-      banner: challengesImg,
-      titulo: "Capacitação Técnica",
-      descricao: "Mergulhe com profundidade nas área de Tecnologia",
-      qtd_etapas: 16,
-    },
-    {
-      banner: challengesImg,
-      titulo: "Capacitação Técnica",
-      descricao: "Mergulhe com profundidade nas área de Tecnologia",
-      qtd_etapas: 16,
-    },
-    {
-      banner: challengesImg,
-      titulo: "Capacitação Técnica",
-      descricao: "Mergulhe com profundidade nas área de Tecnologia",
-      qtd_etapas: 16,
-    },
-  ];
+  const [challenges, setChallenges] = useState([]);
+
+  useEffect(() => {
+    const getChallenges = async () => {
+      const res = await axios.get(
+          "https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/tecnologias"
+       );
+
+      res.data.resultado.forEach((data) => {
+        data.banner = challengesImg;
+      });
+
+      setChallenges(res.data.resultado);
+    };
+    getChallenges();
+  }, []);
 
   return (
     <>
