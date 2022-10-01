@@ -24,6 +24,7 @@ function DetalheCurso() {
   const [curso, setCursos] = useState({
     relatos: [],
     instrutor: [],
+    aulas: []
   });
 
   useEffect(() => {
@@ -84,11 +85,11 @@ function DetalheCurso() {
                   <Col xs={6}>
                     <h4>Aulas</h4>
                     <ul className="aulas">
-                      {curso?.aulas?.length
-                        ? curso.aulas.map((aula, i) => {
-                            return <li key={i}>{aula}</li>;
-                          })
-                        : null}
+                     {
+                      curso.aulas.map((aula, i) => {
+                        return <li key={i}>{aula}</li>;
+                      })
+                     }
                     </ul>
                   </Col>
 
@@ -105,7 +106,7 @@ function DetalheCurso() {
                     <ul className="avaliacao">
                       {curso.relatos.map((avaliacao, index) => {
                         return (
-                          <li>
+                          <li key={index}>
                             <div>
                               <div className="d-flex align-items-start">
                                 <img src={perfilAvaliacao} alt="" />

@@ -38,7 +38,7 @@ function DetalheVaga() {
         >
           <path
             fill="#5643ae"
-            fill-opacity="1"
+            fillOpacity="1"
             d="M0,128L60,154.7C120,181,240,235,360,245.3C480,256,600,224,720,197.3C840,171,960,149,1080,165.3C1200,181,1320,235,1380,261.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
           ></path>
         </svg>
@@ -77,7 +77,7 @@ function DetalheVaga() {
           <div className="card p-5">
             <h3 className="title-card">Cultura da empresa</h3>
 
-            <textarea rows="20">{vaga.descricao_cultural}</textarea>
+            <textarea rows="20" defaultValue={vaga.descricao_cultural}></textarea>
           </div>
 
           <br></br>
@@ -85,7 +85,7 @@ function DetalheVaga() {
           <div className="card p-5">
             <h3 className="title-card">O que é essencial</h3>
 
-            <textarea rows="7">{vaga.essencial}</textarea>
+            <textarea rows="7" defaultValue={vaga.essencial}></textarea>
           </div>
 
           <br></br>
