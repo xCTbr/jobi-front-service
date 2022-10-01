@@ -15,15 +15,16 @@ import perfilAvaliacao from "../../assets/img/perfil-avaliacao.png";
 import Button from "react-bootstrap/Button";
 import { useParams } from "react-router-dom";
 
-
 import { useEffect, useState } from "react";
-
 
 const axios = require("axios").default;
 
 function DetalheCurso() {
   const { id } = useParams();
-  const [curso, setCursos] = useState([]);
+  const [curso, setCursos] = useState({
+    relatos: [],
+    instrutor: [],
+  });
 
   useEffect(() => {
     const getCursos = async () => {
@@ -39,14 +40,16 @@ function DetalheCurso() {
             "Ótimo método de ensino. Rápido e objetivo, mas não deixa passar nada de importante. Parabéns aos desenvolvedores do curso.",
           avaliacao: 10,
         },
-      ]
+      ];
+
       res.data.resultado.instrutor = {
         nome: "Nome",
         descricao:
           "Ajudo devs a conquistarem sua primeira vaga e construírem carreiras de sucesso!",
-      }
+      };
 
       res.data.resultado.capa = challenges;
+
       setCursos(res.data.resultado);
     };
     getCursos();
@@ -61,7 +64,7 @@ function DetalheCurso() {
       >
         <path
           fill="#5643ae"
-          fill-opacity="1"
+          fillOpacity="1"
           d="M0,128L60,154.7C120,181,240,235,360,245.3C480,256,600,224,720,197.3C840,171,960,149,1080,165.3C1200,181,1320,235,1380,261.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
         ></path>
       </svg>
@@ -81,11 +84,11 @@ function DetalheCurso() {
                   <Col xs={6}>
                     <h4>Aulas</h4>
                     <ul className="aulas">
-                      {
-                        curso?.aulas?.length ?
-                          curso.aulas.map((aula, i) => {
+                      {curso?.aulas?.length
+                        ? curso.aulas.map((aula, i) => {
                             return <li key={i}>{aula}</li>;
-                          }) : null}
+                          })
+                        : null}
                     </ul>
                   </Col>
 
