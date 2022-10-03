@@ -6,17 +6,25 @@ import share from "../../assets/img/share.png";
 
 import "./teste-sobre.css";
 
+import { useParams } from "react-router-dom";
+
+
+import { useEffect, useState } from "react";
+
+const axios = require("axios").default;
+
 function TesteSobre() {
-  const teste = {
-    titulo: "Python",
-    challenge: {
-      titulo: "Estruturas condicionais com If Else",
-      descricao_longa:
-        "Entenda mais como funciona esta linguagem popular \n Organize seu código com funções \n Lide com diferentes estruturas de dados \n Aprender a usar a estrutura condicional IF ELSE \n Chaveamento de IF ELSE",
-      duracao: "35 minutos",
-      avaliacao: 9.2,
-    },
-  };
+    const { id, trilhaId } = useParams();
+    const [teste, setTestes] = useState([]);
+    useEffect(() => {
+      const getTestes = async () => {
+        const res = await axios.get(
+          `https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/challenges/${id}/${trilhaId}`
+        );
+        setTestes(res.data.resultado);
+      };
+      getTestes();
+    }, [id, trilhaId]);
 
   return (
     <>
@@ -42,7 +50,7 @@ function TesteSobre() {
         <Container>
           <div className="teste-sobre-titulo">
             <h4>{teste.titulo}</h4>
-            <span>{teste.challenge.titulo}</span>
+            <span>{teste.titulo}</span>
           </div>
 
           <div className="teste-sobre-descricao">
@@ -51,7 +59,7 @@ function TesteSobre() {
             </p>
 
             <span className="teste-sobre-descricao-info">
-              {teste.challenge.descricao_longa}
+              {teste.descricao_longa}
             </span>
 
             <Button variant="primary">Iniciar teste</Button>
@@ -59,12 +67,12 @@ function TesteSobre() {
             <div className="teste-sobre-icons">
               <span>
                 <img src={cronometro} alt="" />
-                {teste.challenge.duracao}
+                {teste.duracao}
               </span>
 
               <span>
                 <img src={estrela} alt="" />
-                {teste.challenge.avaliacao}
+                {teste.avaliacao}
               </span>
 
               <span>

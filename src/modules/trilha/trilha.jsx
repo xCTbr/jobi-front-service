@@ -25,7 +25,7 @@ function Trilha() {
       setTrilhas(res.data.resultado);
     };
     getTrilhas();
-  });
+  }, [id]);
 
   return (
     <>
@@ -66,7 +66,7 @@ function Trilha() {
                   </div>
 
                   <Button variant="primary">
-                    <Link to="/trilha/sobre">Acessar</Link>
+                    <Link to={`/trilha/${id}/${trilha._id}`}>Acessar</Link>
                   </Button>
                 </li>
               );
