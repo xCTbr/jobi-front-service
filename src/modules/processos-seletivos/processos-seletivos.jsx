@@ -5,31 +5,35 @@ import Button from "react-bootstrap/Button";
 
 import "./processos-seletivos.css";
 
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
-function ProcessosSeletivos() {
-  const vagasAbertas = [
-    {
-      empresa: "Itaú",
-      titulo: "Pessoa Desenvolvedora FullStack JR",
-      estado: "São Paulo",
-      pais: "Brasil",
-    },
-    {
-      empresa: "Itaú",
-      titulo: "Pessoa Desenvolvedora FullStack JR",
-      estado: "São Paulo",
-      pais: "Brasil",
-    },
-  ];
+const axios = require("axios").default;
 
-  const seusProcessos = [
-    {
-      empresa: "Itaú",
-      titulo: "Pessoa Desenvolvedora FullStack JR",
-      status: "Aguardando resposta da empresa",
-    },
-  ];
+function ProcessosSeletivos() {
+  const [processosSeletivos, setProcessosSeletivos] = useState([]);
+
+  useEffect(() => {
+    const getProcessosSeletivos = async () => {
+      const res = await axios.get(
+       // "https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/tecnologias"
+        "https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/vagas"
+     );
+
+
+
+    setProcessosSeletivos(res.data.resultado);
+  };
+  getProcessosSeletivos();
+}, []);
+const seusProcessos = [
+  {
+    empresa: "Itaú",
+    titulo: "Pessoa Desenvolvedora FullStack JR",
+    status: "Aguardando resposta da empresa",
+  },
+];
 
   return (
     <>
@@ -56,21 +60,21 @@ function ProcessosSeletivos() {
           <Tabs defaultActiveKey="home">
             <Tab eventKey="home" title="Vagas Abertas">
               <ul className="processo-seletivo-lista">
-                {vagasAbertas.map((vaga, i) => {
+                {processosSeletivos.map((processosSeletivos, i) => {
                   return (
                     <li key={i}>
                       <div>
-                        <b>{vaga.empresa}</b>
+                        <b>{processosSeletivos.empresa}</b>
 
-                        <p>{vaga.titulo}</p>
+                        <p>{processosSeletivos.titulo}</p>
 
-                        <span>{vaga.estado}</span>
+                        <span>{processosSeletivos.estado}</span>
 
-                        <span>{vaga.pais}</span>
+                        <span>{processosSeletivos.pais}</span>
                       </div>
 
                       <Button variant="primary">
-                        <Link to="/vagas/detalhes">Participar do Processo</Link>
+                       <Link to={`/vagas/detalhes/${processosSeletivos._id}`}>Participar do Processo</Link>
                       </Button>
                     </li>
                   );
