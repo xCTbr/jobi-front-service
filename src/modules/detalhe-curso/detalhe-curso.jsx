@@ -44,7 +44,7 @@ function DetalheCurso() {
       ];
 
       res.data.resultado.instrutor = {
-        nome: "Nome",
+        nome: "Douglas Moretto Feregatti",
         descricao:
           "Ajudo devs a conquistarem sua primeira vaga e construírem carreiras de sucesso!",
       };
