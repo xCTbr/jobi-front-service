@@ -17,7 +17,6 @@ const axios = require("axios").default;
 
 function DetalheVaga() {
 const { id } = useParams();
-console.log(id)
 const [processoSeletivo, setProcessoSeletivo] = useState([]);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const [processoSeletivo, setProcessoSeletivo] = useState([]);
       setProcessoSeletivo(res.data.resultado);
     };
     getProcessoSeletivo();
-  },[]);
+  });
 
   return (
     <>

@@ -13,44 +13,19 @@ import { Link } from "react-router-dom";
 const axios = require("axios").default;
 function Trilha() {
   const { id } = useParams();
-  console.log(id)
   const [trilha, setTrilhas] = useState([]);
 
   useEffect(() => {
     const getTrilhas = async () => {
       const res = await axios.get(
-        `https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/cursos/${id}`
+        `https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/challenges/${id}`
       );
 
      
       setTrilhas(res.data.resultado);
     };
     getTrilhas();
-  }, []);
-
-
-  const challenges = [
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-  ];
+  });
 
   return (
     <>
