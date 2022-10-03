@@ -29,7 +29,7 @@ const [processoSeletivo, setProcessoSeletivo] = useState([]);
       setProcessoSeletivo(res.data.resultado);
     };
     getProcessoSeletivo();
-  });
+  }, [id]);
 
   return (
     <>

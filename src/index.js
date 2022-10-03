@@ -39,7 +39,7 @@ createRoot(document.getElementById("root")).render(
 
         <Route path="/trilha/:id" element={<Trilha />} />
 
-        <Route path="/trilha/sobre" element={<TesteSobre />} />
+        <Route path="/trilha/:id/:trilhaId" element={<TesteSobre />} />
 
         <Route path="/processos-seletivos" element={<ProcessosSeletivos />} />
 
