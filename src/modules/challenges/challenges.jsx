@@ -43,7 +43,7 @@ function Challenges() {
         </svg>
 
         <Container>
-          <h2>Challenges</h2>
+          <h2>Desafios</h2>
           <hr />
           <p className="sub-title">
             Teste suas habilidades nas tecnologias mais requisitadas do Mercado.
@@ -66,7 +66,7 @@ function Challenges() {
                     </b>
 
                     <Button variant="primary">
-                      <Link to="/trilha">Acessar</Link>
+                      <Link to={`/trilha/${challenge._id}`}>Acessar</Link>
                     </Button>
                   </div>
                 </div>

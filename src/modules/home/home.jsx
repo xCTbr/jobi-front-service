@@ -23,7 +23,7 @@ function Home() {
               <Card.Img src={knowledge} />
 
               <Card.Body>
-                <Card.Title>Knowledge</Card.Title>
+                <Card.Title>Aprendizado</Card.Title>
                 <Card.Text>
                   Mergulhe com profundidade nas área de Tecnologia
                 </Card.Text>
@@ -40,7 +40,7 @@ function Home() {
               <Card.Img src={jobs} />
 
               <Card.Body>
-                <Card.Title>Jobs</Card.Title>
+                <Card.Title>Vagas</Card.Title>
                 <Card.Text>
                   Acompanhe sua jornada na busca de uma nova colocação
                 </Card.Text>
@@ -56,7 +56,7 @@ function Home() {
               <Card.Img src={challenges} />
 
               <Card.Body>
-                <Card.Title>Challenges</Card.Title>
+                <Card.Title>Desafios</Card.Title>
                 <Card.Text>
                   Prove sua proficiência em diversas tecnologias
                 </Card.Text>

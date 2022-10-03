@@ -37,7 +37,7 @@ createRoot(document.getElementById("root")).render(
 
         <Route path="/challenges" element={<Challenges />} />
 
-        <Route path="/trilha" element={<Trilha />} />
+        <Route path="/trilha/:id" element={<Trilha />} />
 
         <Route path="/trilha/sobre" element={<TesteSobre />} />
 
@@ -48,7 +48,7 @@ createRoot(document.getElementById("root")).render(
           element={<ProcessosSeletivosDetalhes />}
         />
 
-        <Route path="/vagas/detalhes" element={<DetalheVaga />} />
+        <Route path="/vagas/detalhes/:id" element={<DetalheVaga />} />
 
         <Route path="/mensagens" element={<Mensagens />} />
 

@@ -18,13 +18,13 @@ function Header() {
 
         <ul>
           <li>
-            <Link to="/cursos">Explorar</Link>
+            <Link to="/cursos">Aprendizado</Link>
           </li>
           <li>
-            <Link to="/processos-seletivos">Jobs</Link>
+            <Link to="/processos-seletivos">Vagas</Link>
           </li>
           <li>
-            <Link to="/challenges">Challenges</Link>
+            <Link to="/challenges">Desafios</Link>
           </li>
         </ul>
       </div>

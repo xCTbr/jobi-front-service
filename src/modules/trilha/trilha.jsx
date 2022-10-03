@@ -1,31 +1,31 @@
 import { Container, Button } from "react-bootstrap";
 import "./trilha.css";
 
+import { useParams } from "react-router-dom";
+
+
+import { useEffect, useState } from "react";
+
+
 import { Link } from "react-router-dom";
 
+
+const axios = require("axios").default;
 function Trilha() {
-  const challenges = [
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-    {
-      titulo: "Python If-Else",
-      nivel: "Basic",
-      descricao: "Aprenda a usar as estruturas condicionais if e else",
-    },
-  ];
+  const { id } = useParams();
+  const [trilha, setTrilhas] = useState([]);
+
+  useEffect(() => {
+    const getTrilhas = async () => {
+      const res = await axios.get(
+        `https://7v5crizlwg.execute-api.us-east-1.amazonaws.com/prod/challenges/${id}`
+      );
+
+     
+      setTrilhas(res.data.resultado);
+    };
+    getTrilhas();
+  });
 
   return (
     <>
@@ -50,18 +50,18 @@ function Trilha() {
 
         <Container>
           <ul className="trilha-lista">
-            {challenges.map((challenge, i) => {
+            {trilha.map((trilha, i) => {
               return (
                 <li key={i}>
                   <div className="trilha-lista_info">
-                    <p className="trilha-lista_info-name">{challenge.titulo}</p>
+                    <p className="trilha-lista_info-name">{trilha.titulo}</p>
 
                     <span className="trilha-lista_info-level">
-                      {challenge.nivel}
+                      {trilha.nivel}
                     </span>
 
                     <span className="trilha-lista_info-desc">
-                      {challenge.descricao}
+                      {trilha.descricao}
                     </span>
                   </div>
 
