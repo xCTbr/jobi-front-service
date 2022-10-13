@@ -32,7 +32,7 @@ function Trilha() {
       <div className="trilha">
         <div>
           <Container>
-            <h3>Trilha Python</h3>
+            <h3>Etapas da trilha</h3>
           </Container>
         </div>
 
